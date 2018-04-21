@@ -157,7 +157,6 @@
         
         uniqueIdentification = [self UUID];
         BOOL isSuccess =  [UICKeyChainStore setString:uniqueIdentification forKey:kUUIDServiceIdentifier service:[self appBundleID]];
-        NSLog(@"%d======",isSuccess);
         return uniqueIdentification;
     }
 }
