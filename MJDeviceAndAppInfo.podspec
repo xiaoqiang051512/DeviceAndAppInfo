@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MJDeviceAndAppInfo"
-  s.version      = "0.0.5"
+  s.version      = "0.0.6"
   s.summary      = "MJDeviceAndAppInfo收集设备信息和APP里面的配置信息工具类"
 
   # This description is used to generate tags and improve search results.
