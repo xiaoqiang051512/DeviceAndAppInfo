@@ -1,15 +1,15 @@
 //
-//  MJDeviceAndAppInfo.h
-//  ObtainDeviceInfo
+//  MJDeviceInfo.h
+//  Test01
 //
-//  Created by 刘志伟 on 2018/4/21.
+//  Created by 刘志伟 on 2018/4/22.
 //  Copyright © 2018年 liuzhiwei. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface MJDeviceAndAppInfo : NSObject
+@interface MJDeviceInfo : NSObject
 
 ///设备名称 “iPhone X、iPhone 8”
 +  (NSString *)deviceName;
@@ -25,21 +25,6 @@
 
 ///系统名称 “iOS、watchOS”
 + (NSString *)systemName;
-
-///UUID
-+ (NSString *)UUID;
-
-///唯一标示符号 用UUID和KeyChainStore
-+ (NSString *)uniqueIdentification;
-
-///APP版本号 "1.0.0"
-+ (NSString *)appVersion;
-
-///获取app 的bundleID
-+ (NSString *)appBundleID;
-
-///获取app 的昵称
-+ (NSString *)appName;
 
 ///电池信息
 + (float )batteryLevel;

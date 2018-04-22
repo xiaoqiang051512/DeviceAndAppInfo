@@ -1,14 +1,12 @@
 //
-//  MJDeviceAndAppInfo.m
-//  ObtainDeviceInfo
+//  MJDeviceInfo.m
+//  Test01
 //
-//  Created by 刘志伟 on 2018/4/21.
+//  Created by 刘志伟 on 2018/4/22.
 //  Copyright © 2018年 liuzhiwei. All rights reserved.
 //
 
-#import "MJDeviceAndAppInfo.h"
-
-#import "UICKeyChainStore.h"
+#import "MJDeviceInfo.h"
 
 #import "sys/utsname.h"
 #import <AdSupport/AdSupport.h>
@@ -30,12 +28,9 @@
 #define IP_ADDR_IPv4    @"ipv4"
 #define IP_ADDR_IPv6    @"ipv6"
 
-#define kUUIDServiceIdentifier @"kUUIDServiceIdentifier"
-
-@implementation MJDeviceAndAppInfo
+@implementation MJDeviceInfo
 
 + (NSString *)deviceName {
-    
     struct utsname systemInfo;
     uname(&systemInfo);
     NSString *deviceString = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
@@ -140,49 +135,10 @@
     return systemVersion;
 }
 
-+ (NSString *)UUID {
-    
-    NSString *uuid = [[UIDevice currentDevice].identifierForVendor UUIDString];
-    return uuid;
-}
-
-+ (NSString *)uniqueIdentification {
-    
-    NSString *uniqueIdentification = [UICKeyChainStore stringForKey:kUUIDServiceIdentifier service:[self appBundleID]];
-    
-    if (uniqueIdentification.length) {
-        
-        return uniqueIdentification;
-    } else {
-        
-        uniqueIdentification = [self UUID];
-        BOOL isSuccess =  [UICKeyChainStore setString:uniqueIdentification forKey:kUUIDServiceIdentifier service:[self appBundleID]];
-        return uniqueIdentification;
-    }
-}
-
 + (NSString *)systemName {
     
     NSString *systemName = [UIDevice currentDevice].systemName;
     return systemName;
-}
-
-+ (NSString *)appVersion {
-    
-    NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-    return appVersion;
-}
-
-+ (NSString *)appBundleID {
-    
-    NSString *bundleID = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"];
-    return bundleID;
-}
-
-+ (NSString *)appName {
-    
-    NSString *appName = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"];
-    return appName;
 }
 
 + (float)batteryLevel {
@@ -448,6 +404,7 @@
     if (kern != KERN_SUCCESS) return -1;
     return vm_stat.purgeable_count * page_size;
 }
+
 
 
 @end

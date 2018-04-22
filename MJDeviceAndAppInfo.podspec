@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MJDeviceAndAppInfo"
-  s.version      = "0.0.1"
+  s.version      = "0.0.3"
   s.summary      = "MJDeviceAndAppInfo收集设备信息和APP里面的配置信息工具类"
 
   # This description is used to generate tags and improve search results.
@@ -29,6 +29,10 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/xiaoqiang051512/DeviceAndAppInfo"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
+s.subspec 'MJAppInfo' do 'MJAppInfo' 'a'
+a.
+
+end
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -91,9 +95,16 @@ Pod::Spec.new do |s|
 
   s.source_files  = "MJDeviceAndAppInfo/*.{h,m}"
   s.exclude_files = "Classes/Exclude"
-
   # s.public_header_files = "Classes/**/*.h"
 
+  s.subspec 'MJDeviceInfo' do |d|
+  d.source_files = "MJDeviceAndAppInfo/MJDeviceInfo/*.{h,m}"
+  end
+
+  s.subspec 'MJAppInfo' do |a|
+  a.source_files = "MJDeviceAndAppInfo/MJAppInfo/*.{h,m}"
+  a.dependency 'UICKeyChainStore', '~> 2.1.1'
+  end
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -132,6 +143,5 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
-  s.dependency  'UICKeyChainStore', '~> 2.1.1'
 
 end
