@@ -88,17 +88,17 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "MJDeviceAndAppInfo/**/*.{h,m}"
-  s.exclude_files = "Classes/Exclude"
+  #s.source_files  = "MJDeviceAndAppInfo/MJDeviceAndAppInfo"
+  #s.exclude_files = "Classes/Exclude"
   # s.public_header_files = "Classes/**/*.h"
 
-  s.subspec 'MJDeviceInfo' do |d|
-  d.source_files = "MJDeviceAndAppInfo/MJDeviceInfo/*.{h,m}"
+  s.subspec 'MJDeviceInfo' do |di|
+  di.source_files = "MJDeviceAndAppInfo/MJDeviceInfo/*.{h,m}"
   end
 
-  s.subspec 'MJAppInfo' do |a|
-  a.source_files = "MJDeviceAndAppInfo/MJAppInfo/*.{h,m}"
-  a.dependency 'UICKeyChainStore', '~> 2.1.1'
+  s.subspec 'MJAppInfo' do |ai|
+  ai.source_files = "MJDeviceAndAppInfo/MJAppInfo/*.{h,m}"
+  ai.dependency 'UICKeyChainStore', '~> 2.1.1'
   end
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -134,7 +134,7 @@ Pod::Spec.new do |s|
   #  where they will only apply to your library. If you depend on other Podspecs
   #  you can include multiple dependencies to ensure it works.
 
-  # s.requires_arc = true
+   s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
