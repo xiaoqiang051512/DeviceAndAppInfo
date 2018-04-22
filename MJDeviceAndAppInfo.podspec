@@ -29,11 +29,6 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/xiaoqiang051512/DeviceAndAppInfo"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
-s.subspec 'MJAppInfo' do 'MJAppInfo' 'a'
-a.
-
-end
-
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  Licensing your code is important. See http://choosealicense.com for more info.
@@ -93,7 +88,7 @@ end
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "MJDeviceAndAppInfo/*.{h,m}"
+  s.source_files  = "MJDeviceAndAppInfo/**/*.{h,m}"
   s.exclude_files = "Classes/Exclude"
   # s.public_header_files = "Classes/**/*.h"
 
